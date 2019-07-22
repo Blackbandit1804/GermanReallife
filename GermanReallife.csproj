@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>compiled\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="BCrypt-Core">
+      <HintPath>..\..\runtime\BCrypt-Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Bootstrapper">
+      <HintPath>..\..\runtime\Bootstrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="LiteDB">
+      <HintPath>..\..\runtime\LiteDB.dll</HintPath>
+    </Reference>
+    <Reference Include="rage-sharp">
+      <HintPath>..\..\runtime\rage-sharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Main.cs">
+      <Generator></Generator>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Commands\" />
+    <Folder Include="Fraktionen\ADAC\" />
+    <Folder Include="Fraktionen\News\" />
+    <Folder Include="Fraktionen\Rettung\" />
+    <Folder Include="Fraktionen\Polizei\" />
+    <Folder Include="Admin\" />
+    <Folder Include="Gangs\Grove Street\" />
+    <Folder Include="Gangs\LCN\" />
+    <Folder Include="Gangs\Triaden\" />
+    <Folder Include="Jobs\Bauer\" />
+    <Folder Include="Jobs\Müllmann\" />
+    <Folder Include="Jobs\Trucker\" />
+    <Folder Include="Jobs\Taxifahrer\" />
+    <Folder Include="Handy\" />
+    <Folder Include="Bank\" />
+    <Folder Include="ServerSetup\TextLabels\" />
+    <Folder Include="Tutorial\" />
+  </ItemGroup>
+
+</Project>

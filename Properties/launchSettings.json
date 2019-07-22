@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "GermanReallife": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\omega\\Documents\\RageMP\\server-files\\server.exe",
+      "workingDirectory": "C:\\Users\\omega\\Documents\\RageMP\\server-files"
+    }
+  }
+}

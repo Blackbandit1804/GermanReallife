@@ -1,0 +1,5 @@
+﻿<meta>
+  <info name="GermanReallife" author="MagicPotter" type="script" />
+
+  <script src="compiled/netcoreapp2.2/GermanReallife.dll" />
+</meta>
