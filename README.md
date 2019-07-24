@@ -9,8 +9,7 @@ Das Script wird auf LiteDB geschrieben. D.h ihr benötigt folgende Dateien damit
 - [Clientside Files]()
 
 ## Status
-- [x] Mysql User Datenbank
-- [x] Login / Register System
+Der akutelle Script status kann [hier]("https://trello.com/b/tjr3N2kO/ragemp-server") verfolgt werden 
 
 ## License
 Jeder darf dieses Script benutzen / bearbeiten etc.
