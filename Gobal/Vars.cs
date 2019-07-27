@@ -11,6 +11,8 @@ namespace GermanReallife.Gobal
         public static string Server_Version = "0.0.2";
         public static string Coder = "MagicPotter";
 
+        public static int startMoney = 2500;
+
         /* Geschlecht */
         public const int SEX_NONE = -1;
         public const int SEX_MALE = 0;

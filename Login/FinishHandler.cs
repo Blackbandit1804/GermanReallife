@@ -21,6 +21,7 @@ namespace GermanReallife.Login
                 playerStats._id = client_id;
                 Database.Upsert(playerStats);
             }
+            client.Position = playerStats.GetLastPosition();
         }
     }
 }

@@ -32,8 +32,10 @@ namespace GermanReallife
         [ServerEvent(Event.PlayerConnected)]
         public void OnPlayerConnected(Client player)
         {
+            PlayerInfo pInfo = Database.GetData<PlayerInfo>("username", player.Name);
             player.SendChatMessage($"╔═════Willkommen auf ~b~{Vars.Servername}~w~═════╗");
             player.SendChatMessage($"╠Server Version: ~b~{Vars.Server_Version}");
+            player.SendChatMessage($"╠Spieler Name: ~b~ {pInfo.vorname}_{pInfo.nachname}");
             player.SendChatMessage("╚═══════════════════════════════╝");
         }
 

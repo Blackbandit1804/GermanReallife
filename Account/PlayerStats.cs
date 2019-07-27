@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using GTANetworkAPI;
+﻿using GTANetworkAPI;
+using GermanReallife.Gobal;
 
 namespace GermanReallife.Account
 {
@@ -8,7 +7,7 @@ namespace GermanReallife.Account
     {
         public int _id { get; set; }
         public int adminrank { get; set; }
-        public double money { get; set; } = 13500;
+        public double money { get; set; } = Vars.startMoney;
         public double bank { get; set; }
         public int bkonto { get; set; }
         public int bkontopin { get; set; }
