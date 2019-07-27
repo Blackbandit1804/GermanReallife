@@ -21,23 +21,6 @@ namespace GermanReallife.Login
                 playerStats._id = client_id;
                 Database.Upsert(playerStats);
             }
-
-            if (playerStats.vorname == "None" || playerStats.nachname == "None")
-            {
-                client.SendChatMessage("~r~SERVER: ~w~Bitte wähle einen Vor/Nachname!");
-                NAPI.ClientEvent.TriggerClientEvent(client, "StartCharBrowser");
-                client.Position = playerStats.GetLastPosition();
-                return;
-            }
-            else
-            {
-                client.SendChatMessage($"Willkommen, {playerStats.vorname} {playerStats.nachname} auf ~b~{Vars.Servername}");
-                client.SendChatMessage($"~r~SERVER: ~w~Dies ist eine Entwickler Version von ~b~{Vars.Servername}!");
-                client.SendChatMessage("~r~SERVER: ~w~Also sind Bug`s keine Seltenheit!");
-                client.SendChatMessage($"~b~Name: {playerStats.vorname} {playerStats.nachname}");
-                client.Position = playerStats.GetLastPosition();
-                return;
-            }
         }
     }
 }

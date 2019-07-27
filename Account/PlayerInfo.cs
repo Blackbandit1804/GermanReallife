@@ -7,6 +7,8 @@ namespace GermanReallife.Account
     {
         public int _id { get; set; }
         public string username { get; set; }
+        public string vorname { get; set; }
+        public string nachname { get; set; }
         public string password { get; set; }
         public int loggedin { get; set; }
         public int banned { get; set; }
@@ -14,9 +16,11 @@ namespace GermanReallife.Account
 
         public PlayerInfo() { }
 
-        public PlayerInfo(string username, string password, bool loggedin)
+        public PlayerInfo(string username, string vorname, string nachname, string password, bool loggedin)
         {
             this.username = username;
+            this.vorname = vorname;
+            this.nachname = nachname;
             this.password = BCryptHelper.HashPassword(password, BCryptHelper.GenerateSalt());
         }
 

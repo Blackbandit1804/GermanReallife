@@ -6,33 +6,6 @@ namespace GermanReallife.Login
 {
     public class LoginHandler : Script
     {
-        [RemoteEvent("OnPlayerCharacterAttempt")]
-        public void OnPlayerCharacterAttempt(Client client, string vorname, string nachname)
-        {
-            if (vorname != "" && nachname != "")
-            {
-                if (Database.GetData<PlayerStats>("nachname", nachname) != null)
-                {
-                    client.SendChatMessage("~r~Nachname schon vergeben");
-                    client.TriggerEvent("CharacterResult", 0);
-                }
-                else
-                {
-                    PlayerStats pStats = PlayerHelper.GetPlayerStats(client);
-                    pStats.vorname = vorname;
-                    pStats.nachname = nachname;
-                    Database.Upsert(pStats);
-                    client.TriggerEvent("CharacterResult", 1);
-                    client.SendNotification($"~g~Du heißt nun {pStats.vorname}_{pStats.nachname}");
-                }
-            }
-            else
-            {
-                client.SendChatMessage("~r~Vor/Nachname wurden nicht ausgefüllt");
-                client.TriggerEvent("CharacterResult", 0);
-            }
-        }
-
         [RemoteEvent("OnPlayerLoginAttempt")]
         public void OnPlayerLoginAttempt(Client player, string password)
         {
@@ -59,17 +32,32 @@ namespace GermanReallife.Login
         }
 
         [RemoteEvent("OnPlayerRegisterAttempt")]
-        public void OnPlayerRegisterAttempt(Client player, string password)
+        public void OnPlayerRegisterAttempt(Client player, string vorname, string nachname, string password)
         {
-            PlayerInfo playerInfo = new PlayerInfo(player.Name, password, false);
-            if (Database.GetData<PlayerInfo>("username", player.Name) != null)
+            PlayerInfo playerInfo = new PlayerInfo(player.Name, vorname, nachname, password, false);
+
+            if (vorname != "" && nachname != "")
             {
-                player.TriggerEvent("RegisterResult", 0);
+                if (Database.GetData<PlayerInfo>("username", player.Name) != null)
+                {
+                    player.TriggerEvent("RegisterResult", 3);
+                }
+                else
+                {
+                    if (Database.GetData<PlayerInfo>("nachname", nachname) != null)
+                    {
+                        player.TriggerEvent("RegisterResult", 4);
+                    }
+                    else
+                    {
+                        player.TriggerEvent("RegisterResult", 1);
+                        Database.Upsert(playerInfo);
+                    }
+                }
             }
             else
             {
-                player.TriggerEvent("RegisterResult", 1);
-                Database.Upsert(playerInfo);
+                player.TriggerEvent("RegisterResult", 2);
             }
         }
     }

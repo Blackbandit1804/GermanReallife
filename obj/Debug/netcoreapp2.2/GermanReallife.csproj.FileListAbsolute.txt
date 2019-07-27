@@ -22,4 +22,3 @@ C:\Users\omega\Documents\RageMP\server-files\bridge\resources\GermanReallife\obj
 C:\Users\omega\Documents\RageMP\server-files\bridge\resources\GermanReallife\obj\Debug\netcoreapp2.2\GermanReallife.csproj.CopyComplete
 C:\Users\omega\Documents\RageMP\server-files\bridge\resources\GermanReallife\obj\Debug\netcoreapp2.2\GermanReallife.dll
 C:\Users\omega\Documents\RageMP\server-files\bridge\resources\GermanReallife\obj\Debug\netcoreapp2.2\GermanReallife.pdb
-C:\Users\omega\Documents\RageMP\server-files\bridge\resources\GermanReallife\obj\Debug\netcoreapp2.2\GermanReallife.csprojAssemblyReference.cache

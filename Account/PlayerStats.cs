@@ -8,8 +8,6 @@ namespace GermanReallife.Account
     {
         public int _id { get; set; }
         public int adminrank { get; set; }
-        public string vorname { get; set; } = "None";
-        public string nachname { get; set; } = "None";
         public double money { get; set; } = 13500;
         public double bank { get; set; }
         public int bkonto { get; set; }
